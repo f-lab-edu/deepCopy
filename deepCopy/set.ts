@@ -12,17 +12,13 @@ export const deepCloneSet = <T>(target: T): T => {
   return target;
 };
 
-export const deepCopySet = <T>(
-  target: Set<T>,
+export const deepCopySet = <T, V extends T>(
+  target: Set<V>,
   deepCopy: (value: T) => T
 ): T => {
   let clone = new Set();
   target.forEach((value) => {
-    if (value instanceof Object) {
-      clone.add(deepCopy(value));
-    } else {
-      clone.add(value);
-    }
+    clone.add(deepCopy(value));
   });
   return clone as T;
 };
