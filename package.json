@@ -1,21 +1,10 @@
 {
-<<<<<<< HEAD
   "name": "deepCopy",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
     "jest": "^29.6.1"
-=======
-  "name": "deepClone",
-  "version": "1.0.0",
-  "main": "index.js",
-  "author": "ainochi-kor <kthrkdals@gmail.com>",
-  "license": "MIT",
-  "dependencies": {
-    "jest": "^29.6.1",
-    "lodash": "^4.17.21"
->>>>>>> d2db8eb (useable deepCopy with Map and Set)
   },
   "devDependencies": {
     "@babel/core": "^7.22.9",
@@ -27,10 +16,6 @@
     "typescript": "^5.1.6"
   },
   "scripts": {
-<<<<<<< HEAD
     "test": "jest --watchAll --verbose"
-=======
-    "test": "jest"
->>>>>>> d2db8eb (useable deepCopy with Map and Set)
   }
 }
