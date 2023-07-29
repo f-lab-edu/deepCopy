@@ -9,7 +9,7 @@ const deepCopy = <T>(target: T): T => {
   }
 
   if (Array.isArray(target)) {
-    return deepCopyArray(target, deepCopy) as T;
+    return deepCopyArray(target, deepCopy);
   }
 
   if (target instanceof Map) {
@@ -21,7 +21,7 @@ const deepCopy = <T>(target: T): T => {
   }
 
   if (typeof target === "object" && target !== null) {
-    return deepCopyObject(target, deepCopy) as T;
+    return deepCopyObject(target, deepCopy);
   }
 
   return target;

@@ -5,13 +5,13 @@ export const deepCloneArray = (target: any): any => {
   return target;
 };
 
-export const deepCopyArray = <T>(
-  target: any,
+export const deepCopyArray = <T extends Array<T>>(
+  target: T,
   deepCopy: (value: T) => T
 ): any => {
-  let clone = [];
-  for (let i = 0; i < target.length; i++) {
-    clone[i] = deepCopy(target[i]);
-  }
+  let clone: T[] = [];
+  target.forEach((value) => {
+    clone.push(deepCopy(value));
+  });
   return clone;
 };

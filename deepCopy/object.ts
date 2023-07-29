@@ -5,11 +5,13 @@ export const deepCloneObject = <T>(target: T): T => {
   return deepCopyObject(target, deepCloneObject) as T;
 };
 
-export const deepCopyObject = <T>(target: T, deepCopy: (value: any) => T) => {
-  //* Object.getPrototypeOf() 메서드는 지정된 객체의 프로토타입(가령 내부 [[Prototype]] 속성값)을 반환합니다.
+export const deepCopyObject = <T extends Object>(
+  target: T,
+  deepCopy: (value: any) => T
+) => {
   const clone = Object.create(Object.getPrototypeOf(target));
   for (let key in target) {
-    if (target?.hasOwnProperty && target.hasOwnProperty(key)) {
+    if (target.hasOwnProperty(key)) {
       clone[key] = deepCopy(target[key]);
     }
   }
